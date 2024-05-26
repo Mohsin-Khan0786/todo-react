@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
-import { Icon } from '@iconify/react';
-import bxEdit from '@iconify-icons/bx/bx-edit'; // Import the edit icon
+import { Icon } from "@iconify/react";
+import bxEdit from "@iconify-icons/bx/bx-edit";
 
 function TODO() {
   const [task, setTask] = useState("");
@@ -14,11 +14,10 @@ function TODO() {
       alert("Please enter a task list is empty...thank you");
       return;
     }
-  
+
     const newItem = { id: generateUniqueId(), task };
-    // listdata.push(newItem);
     setListData((listdata) => [...listdata, newItem]);
-    setTask('');
+    setTask("");
   }
 
   function generateUniqueId() {
@@ -36,7 +35,6 @@ function TODO() {
     });
   }
 
-  // update activity in todolist items
   function updateActivity(id) {
     const selectedTask = listdata.find((item) => item.id === id);
     if (selectedTask) {
@@ -71,12 +69,10 @@ function TODO() {
 
       <button onClick={addActivity}>Add Task</button>
 
-      {/* Displaying the list of tasks using map */}
       <ul>
         {listdata.map((item) => (
           <li className="Listdata" key={item.id}>
             {item.task}
-            {/* add update icon */}
             <FontAwesomeIcon
               className="icon"
               icon={faTrashAlt}
@@ -85,7 +81,7 @@ function TODO() {
             <Icon
               className="icon"
               icon={bxEdit}
-              onClick={() => updateActivity(item.id)} // Ensure correct function name
+              onClick={() => updateActivity(item.id)}
             />
           </li>
         ))}
