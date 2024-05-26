@@ -1,14 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-import TODO from './TODo';
+import "./App.css";
+import Todo from "./TodoList";
 function App() {
-
   return (
-    <div className="App">
-      <TODO />
-    </div>
+    <>
+      <h1 className="heading">Todo List</h1>
+      <div className="App">
+        <Todo />
+      </div>
+    </>
   );
 }
 
 export default App;
-
